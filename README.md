@@ -9,3 +9,6 @@ This project provides a Python script to connect to a MySQL database, download t
 * Python 3.6 or higher
 * pandas library
 * mysql-connector-python library
+* pymysql library
+* tqdm library
+
