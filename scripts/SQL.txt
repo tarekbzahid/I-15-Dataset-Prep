@@ -1,0 +1,15 @@
+SHOW TABLES FROM NDEX_RealTime_2022 LIKE 'd\_%' 
+
+SELECT COUNT(*) AS num_tables FROM information_schema.tables WHERE table_schema = 'NDEX_RealTime_2022' 
+
+SELECT index_date, lane, vehicle_count, occupancy, vehicle_speed 
+FROM `d_10_1_267` 
+WHERE lane='agg'
+ORDER BY index_date
+
+SELECT d.table_name, d.column_name
+FROM information_schema.columns d
+WHERE d.table_schema = 'NDEX_RealTime_2022'
+  AND d.table_rows > 0
+  AND d.table_name LIKE 'd\_%'
+  AND d.column_name = 'your_column_name';
